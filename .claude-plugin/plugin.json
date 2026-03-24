@@ -1,0 +1,11 @@
+{
+  "name": "norml-claude-skills",
+  "version": "1.0.0",
+  "description": "Norml Studio's shared skills for Claude. SEO writing, content creation, and more.",
+  "author": {
+    "name": "Norml Studio"
+  },
+  "repository": "https://github.com/norml-studio/norml-claude-skills",
+  "license": "MIT",
+  "keywords": ["norml", "seo", "content", "writing"]
+}
