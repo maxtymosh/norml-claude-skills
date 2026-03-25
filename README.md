@@ -30,7 +30,7 @@ The skills will be available in all your Cowork sessions.
 Clone the repo and copy the skills to your global Claude directory:
 
 ```bash
-git clone https://github.com/norml-studio/norml-claude-skills.git
+git clone https://github.com/maxtymosh/norml-claude-skills.git
 cp -r norml-claude-skills/skills/* ~/.claude/skills/
 ```
 
