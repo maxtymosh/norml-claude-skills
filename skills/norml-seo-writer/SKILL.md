@@ -1,5 +1,5 @@
 ---
-name: seo-writer
+name: norml-seo-writer
 description: >
   This skill should be used when the user wants to write SEO-optimized content that ranks
   in search engines. Use when the user says "write an article," "blog post about," "SEO
