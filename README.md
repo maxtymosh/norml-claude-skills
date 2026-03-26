@@ -6,7 +6,7 @@ Shared Claude skills for the Norml Studio team. Install once, available in every
 
 | Skill | What it does |
 |-------|-------------|
-| **seo-writer** | SEO content writing with staged human review. Blog posts, descriptions, landing pages — researched, outlined, drafted, and humanized. |
+| **norml-seo-writer** | SEO content writing with staged human review. Blog posts, descriptions, landing pages — researched, outlined, drafted, and humanized. |
 
 More skills coming: dev, design, PM workflows.
 
@@ -14,43 +14,32 @@ More skills coming: dev, design, PM workflows.
 
 ## Installation
 
-### Claude Desktop (Cowork)
+### Claude Code (terminal, Desktop, claude.ai/code)
 
-1. Download `norml-claude-skills.plugin` from the [latest release](https://github.com/norml-studio/norml-claude-skills/releases)
-2. Open Claude Desktop
-3. Drag the `.plugin` file into any chat, or open it from Finder/Explorer
-4. Click "Install" when prompted
+Run these two commands in Claude Code:
 
-The skills will be available in all your Cowork sessions.
-
-**To update:** download the new `.plugin` file and install again — it overwrites the previous version.
-
-### Claude Code (terminal)
-
-Clone the repo and copy the skills to your global Claude directory:
-
-```bash
-git clone https://github.com/maxtymosh/norml-claude-skills.git
-cp -r norml-claude-skills/skills/* ~/.claude/skills/
+```
+/plugin add marketplace maxtymosh/norml-claude-skills norml
+/plugin install norml-claude-skills@norml
 ```
 
-The skills will be available in every Claude Code session on your machine.
+The skills will be available in all Claude Code sessions on your machine — terminal, Desktop, and web.
 
-**To update:**
+**To update** when new skills are added:
 
-```bash
-cd norml-claude-skills
-git pull
-cp -r skills/* ~/.claude/skills/
+```
+/plugin update
 ```
 
-### Project-specific install (Claude Code)
+### Project-specific install
 
-If you only want the skills in a specific project:
+To add skills only to a specific project, copy the skills folder into the repo:
 
 ```bash
-cp -r norml-claude-skills/skills/* /path/to/your/project/.claude/skills/
+cp -r skills/* /path/to/your/project/.claude/skills/
 ```
+
+Commit `.claude/skills/` to the repo — teammates get the skills automatically on `git pull`.
 
 ---
 
@@ -58,18 +47,18 @@ cp -r norml-claude-skills/skills/* /path/to/your/project/.claude/skills/
 
 Once installed, skills trigger automatically from natural language. Examples:
 
-**seo-writer:**
+**norml-seo-writer:**
 - "Write a blog post targeting 'best CRM for small business'"
 - "Create a category description for our running shoes collection"
 - "I need landing page copy for [keyword]"
 
-If a skill doesn't trigger automatically, reference it by name: "Use the seo-writer skill to..."
+If a skill doesn't trigger automatically, reference it by name: "Use the norml-seo-writer skill to..."
 
 ---
 
 ## Ahrefs integration
 
-The seo-writer skill uses Ahrefs for keyword research if your team has it connected as an MCP server. Without Ahrefs, it falls back to web search.
+The norml-seo-writer skill uses Ahrefs for keyword research if your team has it connected as an MCP server. Without Ahrefs, it falls back to web search.
 
 ---
 
@@ -84,16 +73,9 @@ skills/your-skill-name/
     └── some-reference.md
 ```
 
-See `skills/seo-writer/` for a working example. The SKILL.md needs YAML frontmatter with `name` and `description` fields.
+See `skills/norml-seo-writer/` for a working example. The SKILL.md needs YAML frontmatter with `name` and `description` fields.
 
-After adding, rebuild the `.plugin` file:
-
-```bash
-cd norml-claude-skills
-zip -r norml-claude-skills.plugin . -x "*.DS_Store" -x ".git/*" -x ".gitignore"
-```
-
-Then attach it to a new GitHub release.
+Push to `main` — teammates run `/plugin update` to get the new skills.
 
 ---
 
@@ -104,7 +86,7 @@ norml-claude-skills/
 ├── .claude-plugin/
 │   └── plugin.json
 ├── skills/
-│   └── seo-writer/
+│   └── norml-seo-writer/
 │       ├── SKILL.md
 │       └── references/
 │           ├── content-types.md
