@@ -1,0 +1,23 @@
+{
+  "name": "norml-claude-skills",
+  "owner": {
+    "name": "Norml Studio",
+    "url": "https://github.com/maxtymosh"
+  },
+  "metadata": {
+    "description": "SEO content writing skills for Norml Studio",
+    "version": "1.0.0",
+    "repository": "https://github.com/maxtymosh/norml-claude-skills"
+  },
+  "plugins": [
+    {
+      "name": "norml-claude-skills",
+      "description": "SEO content writer skill for producing optimized blog posts, descriptions, and landing pages",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/norml-seo-writer"
+      ]
+    }
+  ]
+}
